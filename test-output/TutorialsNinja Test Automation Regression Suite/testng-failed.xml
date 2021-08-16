@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [TutorialsNinja Test Automation Regression Suite]" parallel="tests">
+  <listeners>
+    <listener class-name="com.qa.hubspot.testlisteners.ExtentReportListener"/>
+  </listeners>
+  <test name="LoginPage Test">
+    <classes>
+      <class name="com.qa.hupspot.tests.LoginPageTest"/>
+    </classes>
+  </test> <!-- LoginPage Test -->
+  <test name="AccountsPage Test">
+    <classes>
+      <class name="com.qa.hupspot.tests.AccountsPageTest"/>
+    </classes>
+  </test> <!-- AccountsPage Test -->
+  <test name="LoginPage Test(failed)" parallel="tests">
+    <classes>
+      <class name="com.qa.hupspot.tests.AccountsPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="accountsPageSetUp"/>
+        </methods>
+      </class> <!-- com.qa.hupspot.tests.AccountsPageTest -->
+      <class name="com.qa.hupspot.tests.LoginPageTest">
+        <methods>
+          <include name="verifyForgetPasswordLink"/>
+          <include name="setUp"/>
+          <include name="loginTest"/>
+          <include name="tearDown"/>
+          <include name="verifyLoginpPageTitelTest"/>
+        </methods>
+      </class> <!-- com.qa.hupspot.tests.LoginPageTest -->
+    </classes>
+  </test> <!-- LoginPage Test(failed) -->
+  <test name="AccountsPage Test(failed)" parallel="tests">
+    <classes>
+      <class name="com.qa.hupspot.tests.AccountsPageTest">
+        <methods>
+          <include name="verifyMyAccountsSectionCountTest"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyMyAccountsSectionList"/>
+          <include name="accountsPageSetUp"/>
+          <include name="accountPageTitle"/>
+          <include name="searchTest"/>
+          <include name="verifyAccountPageHeaderTest"/>
+        </methods>
+      </class> <!-- com.qa.hupspot.tests.AccountsPageTest -->
+      <class name="com.qa.hupspot.tests.LoginPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.hupspot.tests.LoginPageTest -->
+    </classes>
+  </test> <!-- AccountsPage Test(failed) -->
+</suite> <!-- Failed suite [TutorialsNinja Test Automation Regression Suite] -->
